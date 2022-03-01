@@ -105,13 +105,13 @@ def img_stack(img_array,scale):
 
 
 ## provide the path for testing cofing file and tained model form colab
-net = cv2.dnn.readNetFromDarknet("yolov3_custom_test.cfg",r"C:\Users\Solmaz\Documents\Group Project\Object_Detection\YOLO\Test\yolov3_custom_final.weights")
+net = cv2.dnn.readNetFromDarknet("yolov3_custom_test.cfg","yolov3_custom_final.weights")
 
 ### Change here for custom classes for trained model 
 
 classes = ['sudoku']
 
-img = cv2.imread(r'C:\Users\Solmaz\Documents\Group Project\Object_Detection\YOLO\Test\Test_Images\img126.jpg')
+img = cv2.imread('test.jpg')
 #img = cv2.resize(img,(416,416))
 #cv2.imshow('img1',img)
 hight,width,_ = img.shape
@@ -165,7 +165,7 @@ cv2.imshow('img',img)
 crop_image = img[x:w,y:h]
 cv2.imwrite("box.jpg" %i, crop_image)
 
-img_path = 'C:\\Users\\Solmaz\\Documents\\Group Project\\Object_Detection\\YOLO\\Test\\box.jpg'
+img_path = 'box.jpg'
 img_h = 540
 img_w = 540
 
